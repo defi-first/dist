@@ -1,3 +1,5 @@
-FROM nginx
-
-ADD . /usr/share/nginx/html
+FROM node:20-alpine
+WORKDIR /app
+ADD . .
+RUN npm install
+CMD node server.js

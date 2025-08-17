@@ -1,6 +1,25 @@
 services:
-  frontend:
-    build: 
-      context: .
+  app1:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - APP_NAME=app1
     ports:
-      - 80:80
+      - 3000:3000
+  app2:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - APP_NAME=app2
+    ports:
+      - 3001:3000
+  app3:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - APP_NAME=app3
+    ports:
+      - 3002:3000
